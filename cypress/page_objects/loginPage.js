@@ -12,6 +12,12 @@ class LoginPage {
   get submitBtn() {
     return cy.get("button");
   }
+  get errorMessage() {
+    return cy.get('p[class="alert alert-danger"]');
+  }
+  get loginHeading() {
+    return cy.get("h1");
+  }
 
   /* get logoutBtn() {
     return cy.get(".nav-link").eq(3);

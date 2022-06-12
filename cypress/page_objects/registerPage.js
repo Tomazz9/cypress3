@@ -21,12 +21,15 @@ class RegisterPage {
   get submitButton() {
     return cy.get("button");
   }
+  get errorMessage() {
+    return cy.get('p[class="alert alert-danger"]');
+  }
   register(firstName, lastName, email, password, passwordConfirmation) {
     this.firstNameInput.type(firstName);
     this.lastNameInput.type(lastName);
     this.emailInput.type(email);
     this.passwordInput.type(password);
-    this.passwordConfirmationInput.type(passwordConfirmation);
+    this.passwordConfirmationInput.type(password); //ovde je bilo passcomf ali je zbog fakera stavljeno isto
     this.checkBoxInput.check();
     this.submitButton.click();
   }
